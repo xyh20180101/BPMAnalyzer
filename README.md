@@ -13,7 +13,8 @@
 ## 补充
 1. 结果仅作参考，bpm出现过高/过低的情况可考虑将其÷2/×2，变速歌曲分段后再计算
 2. bat脚本正常情况下会停留且提示成功，如出现闪退/提示无权限，请尝试使用管理员模式或通过终端调用bat
-3. 算法来自[abcsharp/BPMAnalyzer](https://github.com/abcsharp/BPMAnalyzer)，其实我也没看懂，就只是改了音频流处理部分（
+3. 算法来自：[abcsharp/BPMAnalyzer](https://github.com/abcsharp/BPMAnalyzer)，其实我也没看懂，就只是改了音频流处理部分（
+4. 使用音频库：[naudio/NAudio](https://github.com/naudio/NAudio)
 
 
 有问题或建议欢迎留issue或b站评论
