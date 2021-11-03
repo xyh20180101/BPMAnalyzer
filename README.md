@@ -17,4 +17,5 @@
 4. 使用音频库：[naudio/NAudio](https://github.com/naudio/NAudio)
 
 
-有问题或建议欢迎留issue或b站评论
+有问题或建议欢迎留issue或b站评论  
+下载：[Releases](https://github.com/xyh20180101/BPMAnalyzer/releases)
