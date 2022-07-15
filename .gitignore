@@ -1,5 +1,5 @@
 .vs/
 *.user
-BPMAnalyzer/bin/
-BPMAnalyzer/obj/
-BPMAnalyzer/Properties/
+bin/
+obj/
+Properties/

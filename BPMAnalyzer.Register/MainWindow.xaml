@@ -1,0 +1,17 @@
+﻿<Window x:Class="BPMAnalyzer.Register.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BPMAnalyzer.Register"
+        mc:Ignorable="d"
+        Title="" Height="100" Width="200" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="AddButton" Margin="10" Height="40" Content="Add" Grid.Column="0" Click="AddButton_Click"/>
+        <Button x:Name="RemoveButton" Margin="10" Height="40" Content="Remove" Grid.Column="1" Click="RemoveButton_Click"/>
+    </Grid>
+</Window>
