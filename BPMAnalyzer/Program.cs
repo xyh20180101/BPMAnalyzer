@@ -42,6 +42,18 @@ FFT: {fft}");
         Console.ReadKey();
     }
 
+    /// <summary>
+    /// 使用纯托管 MP3 解码器 NLayer 创建读取器。
+    /// 默认的 ACM 解码器在 Native AOT 下会因 Marshal.SizeOf(Mp3WaveFormat)
+    /// 缺少结构封送元数据而崩溃，NLayer 无任何 interop，AOT 安全。
+    /// </summary>
+    static WaveStream CreateMp3Reader(string fullFileName)
+    {
+        var builder = new Mp3FileReader.FrameDecompressorBuilder(
+            waveFormat => new NLayer.NAudioSupport.Mp3FrameDecompressor(waveFormat));
+        return new Mp3FileReaderBase(File.OpenRead(fullFileName), builder);
+    }
+
     static (byte[] data, WaveFormat waveFormat) GetWave16Data(string fullFileName)
     {
         var extension = Path.GetExtension(fullFileName)?.ToLower();
@@ -49,7 +61,7 @@ FFT: {fft}");
         using WaveStream reader = extension switch
         {
             ".wav" => new WaveFileReader(fullFileName),
-            ".mp3" => new Mp3FileReader(fullFileName),
+            ".mp3" => CreateMp3Reader(fullFileName),
             _ => throw new InvalidDataException("Incorrect Format.")
         };
         var waveProvider = reader.ToSampleProvider().ToWaveProvider();
